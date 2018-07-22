@@ -1,0 +1,23 @@
+{
+	"users": {
+		"user 456": {
+			"employees": {
+
+			}
+		},
+		"user 123": {
+			"employees": {
+				"employee 1": {
+					"name": "Jane",
+					"phone": "555-555-5555",
+					"shift": "Monday"
+				},
+				"employee 2": {
+					"name": "Jim",
+					"phone": "333-333-3333",
+					"shift": "Tuesday"
+				}
+			}
+		}
+	}
+}
