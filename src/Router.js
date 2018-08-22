@@ -14,27 +14,27 @@ const RouterComponent = () => {
 
 				{/* 其它這個 app 中有的 Scene 都會擺在這個 root 底下 */}
 				<Scene key='auth'>
-					<Scene 
-						key='login' 
-						component={LoginForm} 
-						title='Please Login' 
-						initial 
+					<Scene
+						key='login'
+						component={LoginForm}
+						title='Please Login'
+						initial
 					/>
 				</Scene>
 
 				<Scene key='main'>
-					<Scene 
-						key='employeeList' 
-						component={EmployeeList} 
+					<Scene
+						key='employeeList'
+						component={EmployeeList}
 						title='Employees'
 						rightTitle='Add'
 						onRight={() => { Actions.employeeCreate() }}
 						initial
 					/>
 
-					<Scene 
-						key='employeeCreate' 
-						component={EmployeeCreate} 
+					<Scene
+						key='employeeCreate'
+						component={EmployeeCreate}
 						title='Create Employee'
 					/>
 				</Scene>

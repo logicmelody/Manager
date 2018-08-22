@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { 
+import {
 	StyleSheet,
 	Picker,
 	Text,
- } from "react-native";
+} from "react-native";
 import { connect } from 'react-redux';
 import {
 	Card,
@@ -11,7 +11,10 @@ import {
 	Input,
 	Button,
 } from "./common";
-import { employeeUpdate } from "../actions/EmployeeActions"
+import {
+	employeeUpdate,
+	employeeCreate,
+} from "../actions/EmployeeActions"
 
 class EmployeeCreate extends Component {
 	_handleChangeNameText(value) {
@@ -19,6 +22,11 @@ class EmployeeCreate extends Component {
 			prop: "name",
 			value,
 		});
+	}
+	_handleOnButtonPress() {
+		const { name, phone, shift, employeeCreate } = this.props;
+
+		employeeCreate({ name, phone, shift: shift || "Monday" });
 	}
 	render() {
 		const { name, phone, shift } = this.props;
@@ -61,11 +69,11 @@ class EmployeeCreate extends Component {
 				</CardSection>
 
 				<CardSection>
-					<Button>
+					<Button onPress={this._handleOnButtonPress.bind(this)}>
 						Create
-					</Button>	
-				</CardSection>	
-			</Card>	
+					</Button>
+				</CardSection>
+			</Card>
 		)
 	}
 }
@@ -83,5 +91,5 @@ const mapStateToProps = (state) => {
 	return { name, phone, shift };
 };
 
-export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeUpdate, employeeCreate})(EmployeeCreate);
 
