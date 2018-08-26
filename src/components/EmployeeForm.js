@@ -3,36 +3,19 @@ import {
 	StyleSheet,
 	Picker,
 	Text,
+	View,
 } from "react-native";
 import { connect } from 'react-redux';
 import {
-	Card,
 	CardSection,
 	Input,
-	Button,
 } from "./common";
-import {
-	employeeUpdate,
-	employeeCreate,
-} from "../actions/EmployeeActions";
+import { employeeUpdate } from "../actions/EmployeeActions";
 
-class EmployeeCreate extends Component {
-	_handleChangeNameText(value) {
-		this.props.employeeUpdate({
-			prop: "name",
-			value,
-		});
-	}
-	_handleOnButtonPress() {
-		const { name, phone, shift, employeeCreate } = this.props;
-
-		employeeCreate({ name, phone, shift: shift || "Monday" });
-	}
+class EmployeeForm extends Component {
 	render() {
-		const { name, phone, shift } = this.props;
-
 		return (
-			<Card>
+			<View>
 				<CardSection>
 					<Input
 						label="Name"
@@ -67,13 +50,7 @@ class EmployeeCreate extends Component {
 						<Picker.Item label="Sunday" value="Sunday" />
 					</Picker>
 				</CardSection>
-
-				<CardSection>
-					<Button onPress={this._handleOnButtonPress.bind(this)}>
-						Create
-					</Button>
-				</CardSection>
-			</Card>
+			</View>
 		)
 	}
 }
@@ -91,5 +68,4 @@ const mapStateToProps = (state) => {
 	return { name, phone, shift };
 };
 
-export default connect(mapStateToProps, { employeeUpdate, employeeCreate })(EmployeeCreate);
-
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeForm);

@@ -1,7 +1,8 @@
-export const EMAIL_CHANGED = 'email_changed';
-export const PASSWORD_CHANGED = 'password_changed';
-export const LOGIN_USER_SUCCESS = 'login_user_success';
-export const LOGIN_USER_FAIL = 'login_user_fail';
-export const LOGIN_USER_ING = 'login_user_ing';
-export const EMPLOYEE_UPDATE = 'employee_update';
-export const EMPLOYEE_CREATE = 'employee_create';
+export const EMAIL_CHANGED = 'EMAIL_CHANGED';
+export const PASSWORD_CHANGED = 'PASSWORD_CHANGED';
+export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+export const LOGIN_USER_FAIL = 'LOGIN_USER_FAIL';
+export const LOGIN_USER_ING = 'LOGIN_USER_ING';
+export const EMPLOYEE_UPDATE = 'EMPLOYEE_UPDATE';
+export const EMPLOYEE_CREATE = 'EMPLOYEE_CREATE';
+export const EMPLOYEES_FETCH_SUCCESS = "EMPLOYEES_FETCH_SUCCESS";
